@@ -1,0 +1,25 @@
+<Kazumi>
+
+호퍼컷 3 rp
+왼어퍼
+왼어퍼투
+섬광
+퇴쇄
+우종 66rk
+1ap 맞으면 2ap확정
+
+6 lk ap 이득기
+6 lk rp
+6 lk lp
+6 lk rk rp
+
+<공콤>
+시동기 : 6 lk rp, 9 rk, 66rk 등등
+6 lk rp
+46 rp lp rk(s)
+46 rp lp ap
+
+<벽콤>
+1. lp rp ap
+2. 6 lk rp lp rp ap(남캐전용)
+3. lplp lp rp ap(여캐전용)
