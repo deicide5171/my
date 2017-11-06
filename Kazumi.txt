@@ -6,6 +6,7 @@
 섬광
 퇴쇄
 우종 66rk
+세이야(공참손)
 1ap 맞으면 2ap확정
 
 6 lk ap 이득기
@@ -16,10 +17,10 @@
 <공콤>
 시동기 : 6 lk rp, 9 rk, 66rk 등등
 6 lk rp
-46 rp lp rk(s)
+46 rp lp rk
 46 rp lp ap
 
 <벽콤>
-1. lp rp ap
-2. 6 lk rp lp rp ap(남캐전용)
-3. lplp lp rp ap(여캐전용)
+ap(원투호랑이)
+6 lk rp ap(남캐전용)
+lplp ap(여캐전용)
