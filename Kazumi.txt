@@ -1,21 +1,34 @@
 <Kazumi>
 
-호퍼컷 3 rp
+호퍼컷 3 rp(18F)
 왼어퍼
-왼어퍼투
-섬광
+왼어퍼투(13F)
+섬광(10F)
 퇴쇄
 우종 66rk
 세이야(공참손)
 1ap 맞으면 2ap확정
 
-6 lk ap 이득기
+ap(12F)
+lkrp(15F) 이후 2rp 또는 롤링호랑이
+lklp(15F) 벽꽝
+9rk(15F)
+
+6 lk n ap 이득기 -> 왼어퍼, rk, 원원 등등 활용
 6 lk rp
 6 lk lp
 6 lk rk rp
 
+66ap(레드) 66rk 6lk rp 46 rp lp ap
+
+기상rkrk(11F)
+기상lprp(12F)
+기상rp(18F)
+
+3 ap(양잡)
+
 <공콤>
-시동기 : 6 lk rp, 9 rk, 66rk 등등
+시동기 : 6 lk rp, 9 rk, 66rk, 3 rp 등등
 6 lk rp
 46 rp lp rk
 46 rp lp ap
