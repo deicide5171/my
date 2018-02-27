@@ -1,4 +1,4 @@
-﻿/*
+/*
 	- Name : Game Macro
 	- Developer Name : deicide5171
 	- Create Date : 2018.01.29
@@ -6,23 +6,26 @@
 	- Version : 1.0.1
 */
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; 개발대상
+; 전역변수 설정
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; ****?. 게임 상태 파악
-; ****?. 게임 상태에 따른 alert, 종료 처리
-; ****?. 스킬 사용
-; ****?. 버튼위치, 이미지등등 정리
-; ****?. 숙제 처리
-; ****?. 단순 반복 클릭 처리
-; ****?. 오류 예외 처리
-; ***?. 멀티창 관리
-; *?. Nox 실행 함수
-; *?. 게임 실행
-; *?. 게임 접속
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+SetDefaults(void){
+	global
+	logDir := "logs\deicide5171_script_log.txt"
+	testPerX := 11.354167  ; C7
+	testPerY := 31.388889  ; C7
+	
+	
+	return
+}
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 단축키 설정
+; qwerasdf // F2(Reload) // F3(테스트실행) // F4(종료)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #q::
-	getPerXY()
+	target := "웹사이트 회원탈퇴 처리결과 통보서_tving.com_개인정보_20180219.xlsx"
+	workingDir := "C:\VDI공유폴더"
+	execProgram(target, workingDir)
 Return
 
 #w::
@@ -53,31 +56,16 @@ Return
 	getPerXY()
 Return
 
+F2::
+	Reload
+Return
+
 F3::
-	; 테스트 완료
-	; getXY()
-	; getPerXY()
-	; getOriXY()
-	; getColor()
-	; getState()
-	; searchPixel(pX, pY, pColor)	; pX = 888 pY = 471 pColor = 0xFFFFFF
-	; searchImage(searchImgPath)	; searchImgPath = %A_ScriptDir%\img.png
-	; shutdownPcPower()
-	; shutdownRebootWindows()
-	; log(sentence)
-	; cSend(controlName, sendKey, winTitle)
-	; cLClick(x, y, winTitle)
-	; cRClick(x, y, winTitle)
-	; callSoundBeep(1000, 500)	; frequency : 37-32767 // Beep음 주파수  duration : milliseconds // 밀리초 동안 SoundBeep 발생
-	
-	; 테스트 필요
-	; 예제 - timer 활용
-	
-	
-	; 테스트 중
+	; 전역변수 설정
 	SetDefaults(0)
 	
 	; GUI
+	; GroupBox 설정값
 	statGroupBoxW = 200
 	statGroupBoxY = 500
 	statGroupBoxTitle = 상태
@@ -92,6 +80,9 @@ F3::
 	
 	statPsettingGroupBoxW := statGroupBoxW + settingGroupBoxW
 	
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	; 상태 GroupBox
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	Gui, Add, GroupBox, w%statGroupBoxW% h%statGroupBoxY% cED006D  vGroup1, %statGroupBoxTitle%
 	Gui, Add, Text, xs+5 ys+30 , * 추후 업데이트 예정
 	/*
@@ -108,6 +99,9 @@ F3::
 	Gui, Add, Button, x+15 yp gBT1, 선택 결과 확인
 	*/
 	
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	; 설정 GroupBox
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	Gui, Add, GroupBox, xs+%statGroupBoxW% ys w%settingGroupBoxW% h%settingGroupBoxY% cED006D  vGroup2, %settingGroupBoxTitle%
 	/*
 	Gui, Add, Text, xs+5 yp+30 c1266FF, DropDownList:
@@ -123,9 +117,22 @@ F3::
 	Gui, Add, Button, x+72 yp gBT4, 선택 결과 확인
 	*/
 	
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	; 버튼 GroupBox
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	Gui, Add, GroupBox, xs+%statPsettingGroupBoxW% ys w%buttonGroupBoxW% h%buttonGroupBoxY% cED006D vGroup3, %buttonGroupBoxTitle%
-	Gui, Add, Button, xp+5 yp+20 gBT3, 테스트
-	Gui, Add, Button, xp yp+30 gBT3, 테스트1
+	Gui, Add, Button, xp+5 yp+20 gSTARTBT, 게임실행	; Nox실행 -> "검은사막"실행 -> 로그인 -> 케릭터 선택
+	
+	Gui, Add, Button, xp yp+30 gMBT1, Macro1	; 1번 숙제 진행
+	Gui, Add, Button, xp yp+30 gMBT2, Macro2	; 2번 숙제 진행
+	Gui, Add, Button, xp yp+30 gMBT3, Macro3	; 3번 숙제 진행
+	Gui, Add, Button, xp yp+30 gMBT4, Macro4	; 4번 숙제 진행
+	Gui, Add, Button, xp yp+30 gMBT5, Macro5	; 5번 숙제 진행
+		
+	Gui, Add, Button, xp yp+30 gSHUTDOWNBT, PC종료	; Nox종료 -> Shutdown 강제 실행
+	Gui, Add, Button, xp yp+30 gEXITBT, 종료	; AutoHotKey Reload(= GUI 종료)
+	
+	
 	/*
 	Gui, Add, Text, xs+5 yp+30 c1266FF, Slider:
 	Gui, Add, Slider, x+40 yp-4 w320 Tickinterval10 gSlider1 altsubmit vSlider1
@@ -135,10 +142,49 @@ F3::
 	Gui, Add, Text, x+10 yp+6 c1266FF w20 Left vNprogress, 100
 	Gui, Add, Button, x+15 yp-7 gBT5, 시작
 	*/
-	Gui, Show,, Deicide5171
+	Gui, Show, AutoSize Center, Deicide5171
 	return
 	
 Return
+
+F4::
+	ExitApp
+Return
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; GUI Button Function List
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STARTBT:
+	MsgBox, Nox실행 및 로그인 기능
+return
+
+MBT1:
+	MsgBox, 1번 매크로
+return
+MBT2:
+	MsgBox, 2번 매크로
+return
+MBT3:
+	MsgBox, 3번 매크로
+return
+MBT4:
+	MsgBox, 4번 매크로
+return
+MBT5:
+	MsgBox, 5번 매크로
+return
+
+EXITBT:
+	Reload
+return
+
+SHUTDOWNBT:
+	; Nox종료
+	
+	
+	; PC종료
+	shutdownPcPower()
+return
 
 ;----------------------------------------------------------------------------------- subroutine 1
 Check1Action:
@@ -244,9 +290,11 @@ Gui, 4: Show, w250 h100, Gui 2
 sleep, 2000
 Gui, 4: Destroy
 return
+
 4GuiClose:
 Gui, 4: Destroy
 return
+
 BT4:
 Gui, Submit, NoHide
 GuiControl,, Group2, 선택결과: Drop1(%Drop1%), Drop2(%Drop2%), Combo(%Combo1%), List(%List1%)
@@ -275,254 +323,45 @@ Loop
 GuiControl,, Group3, vGroup3: 끄~~읕
 return
 
-; 전역변수 설정
-SetDefaults(void){
-	global
-	logDir := "logs\deicide5171_script_log.txt"
-	testPerX := 11.354167  ; C7
-	testPerY := 31.388889  ; C7
-	
-	
-	return
-}
 
-test(){
-	
-}
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; AutoHotKey 예제
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-^j::
-	; 예제 - 최상위 창에 Key 입력
-	Send Sincerely,{enter}John Smith  ; This line sends keystrokes to the active (foremost) window.
-Return
-
-#n::
-	; 예제 - 프로그램 실행
-	Run Notepad++ == Run notepad++ == Run notepad++.exe
-Return
-
-^k::
-	; 예제 - MsgBox
-	MsgBox This is ok.
-	MsgBox, This is ok too (it has an explicit comma).
-Return
-
-/*	예제 - Timer #1
-; Example #1: Close unwanted windows whenever they appear:
-#Persistent
-SetTimer, CloseMailWarnings, 250
-return
-
-CloseMailWarnings:
-WinClose, Microsoft Outlook, A timeout occured while communicating
-WinClose, Microsoft Outlook, A connection to the server could not be established
-return
-*/
-
-/*	예제 - Timer #2
-; Example #2: Wait for a certain window to appear and then alert the user:
-#Persistent
-SetTimer, Alert1, 500
-return
-
-Alert1:
-IfWinNotExist, Video Conversion, Process Complete
-    return
-; Otherwise:
-SetTimer, Alert1, Off  ; i.e. the timer turns itself off here.
-SplashTextOn, , , The video conversion is finished.
-Sleep, 3000
-SplashTextOff
-return
-*/
-
-/*	예제 - Timer #3
-; Example #3: Using a method as the timer subroutine.
-
-counter := new SecondCounter
-counter.Start()
-Sleep 5000
-counter.Stop()
-Sleep 2000
-
-; An example class for counting the seconds...
-class SecondCounter {
-    __New() {
-        this.interval := 1000
-        this.count := 0
-        ; Tick() has an implicit parameter "this" which is a reference to
-        ; the object, so we need to create a function which encapsulates
-        ; "this" and the method to call:
-        this.timer := ObjBindMethod(this, "Tick")
-    }
-    Start() {
-        ; Known limitation: SetTimer requires a plain variable reference.
-        timer := this.timer
-        SetTimer % timer, % this.interval
-        ToolTip % "Counter started"
-    }
-    Stop() {
-        ; To turn off the timer, we must pass the same object as before:
-        timer := this.timer
-        SetTimer % timer, Off
-        ToolTip % "Counter stopped at " this.count
-    }
-    ; In this example, the timer calls this method:
-    Tick() {
-        ToolTip % ++this.count
-    }
-}
-*/
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 개발 중
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-showGUI(){
-	; Font설정 및 Text 입력
-	Gui, Font, underline
-	Gui, Add, Text, cBlue gLaunchGoogle, Click here to launch Google.
+; Nox창 이름 확인
+; Nox창 존재 유무 확인 및 활성화
+; 게임 실행
+; 로그인
+; 메인화면 상태 확인 (클릭해야할 부분 확인)
+; 버튼별 color, 좌표 등등 확인
+; 숙제정리
+; 기능정리
+; 케릭터 변경 (5케릭)
+; 리소스 확인
+; GUI 꾸미기
 
-	; Alternatively, Link controls can be used:
-	Gui, Add, Link,, Click <a href="www.google.com">here</a> to launch Google.
-	Gui, Font, norm
+; 멀티창?
+	; 1~n 창 띄우기
+	; 1~n 창 차례차례 숙제진행
+	; 1~n 창 차례차례 케릭터 변경
+	; 1~n 창 끝나면 종료
+
+; 설정값?
+Nox창 이름
+숙제 반복 횟수?
+PC종료 시간(몇분후? 몇시간후?)
+
+; 상태
+숙제상태
+매크로 오류
+PC종료 남은시간
+
 	
-	; 값 입력 Label + InputBox
-	Gui, Add, Text,, &First Name:
-	Gui, Add, Edit
-	
-	; GUI 표시
-	Gui, Show
-	return
-
-	; 함수?
-	LaunchGoogle:
-	Run www.google.com
-	return
-}
-
-; control* 함수 이용하여 active없이 실행
-; date, time 활용
-; debugger
-; progress
-; random
-; pc reboot
-
-
-test1(){
-/*
-	Send Sincerely,{enter}John Smith  ; Types a two-line signature.
-	Send !fs ; Select the File->Save menu (Alt+F followed by S).
-	Send {End}+{Left 4} ; Jump to the end of the text then send four shift+left-arrow keystrokes.
-	SendInput {Raw}A long series of raw characters sent via the fastest method (SendInput).
-	
-	Click  ; Click left mouse button at mouse cursor's current position.
-	Click 100, 200  ; Click left mouse button at specified coordinates.
-	Click 100, 200, 0  ; Move the mouse without clicking.
-	Click 100, 200 right  ; Click the right mouse button.
-	Click 2  ; Perform a double-click.
-	Click down  ; Presses down the left mouse button and holds it.
-	Click up right  ; Releases the right mouse button.
-	
-	IfWinExist, Untitled - Notepad
-		WinActivate ; use the window found above
-	else
-		WinActivate, Calculator
-*/	
-	; SoundBeep  ; Play the default pitch and duration. 523, 150
-	; SoundBeep, 750, 500  ; Play a higher pitch for half a second.
-	
-	
-	Gui, Add, Link,, Click <a href="www.google.com">here</a> to launch Google.
-	Gui, Font, norm
-	
-	; Gui, Add, Edit, r9 vMyEdit, Text to appear inside the edit control (omit this parameter to start off empty).
-	
-	; Gui, Add, UpDown, vMyUpDown Range1-10, 5
-	
-	Gui, Add, Button, Default, OK
-	
-	Gui, Show
-	return
-	
-	
-}
-
-; 특정 프로그램에서만 동작
-/*
-; notepad 에서만 동작하는 단축키
-#IfWinActive ahk_class Notepad
-^!a::MsgBox You pressed Ctrl-Alt-A while Notepad is active.  ; This hotkey will have no effect if pressed in other windows (and it will "pass through").
-#c::MsgBox You pressed Win-C while Notepad is active.
-::btw::This replacement text for "btw" will occur only in Notepad.
-
-; notepad를 제외한 나머지에서 동작하는 단축키
-#IfWinActive
-#c::MsgBox You pressed Win-C in a window other than Notepad.
-*/
-
-/*
-; Example 1: Adjust volume by scrolling the mouse wheel over the taskbar.
-#If MouseIsOver("ahk_class Shell_TrayWnd")
-WheelUp::Send {Volume_Up}
-WheelDown::Send {Volume_Down}
-
-MouseIsOver(WinTitle) {
-    MouseGetPos,,, Win
-    return WinExist(WinTitle . " ahk_id " . Win)
-}
-
-; Example 2: Simple word-delete shortcuts for all Edit controls.
-#If ActiveControlIsOfClass("Edit")
-^BS::Send ^+{Left}{Del}
-^Del::Send ^+{Right}{Del}
-
-ActiveControlIsOfClass(Class) {
-    ControlGetFocus, FocusedControl, A
-    ControlGet, FocusedControlHwnd, Hwnd,, %FocusedControl%, A
-    WinGetClass, FocusedControlClass, ahk_id %FocusedControlHwnd%
-    return (FocusedControlClass=Class)
-}
-
-; Example 3: Context-insensitive hotkey.
-#If
-Esc::ExitApp
-
-; Example 4: Dynamic hotkeys. Requires Example 1.
-NumpadAdd::
-Hotkey, If, MouseIsOver("ahk_class Shell_TrayWnd")
-if (doubleup := !doubleup)
-    Hotkey, WheelUp, DoubleUp
-else
-    Hotkey, WheelUp, WheelUp
-return
-
-DoubleUp:
-Send {Volume_Up 2}
-return
-*/
-
-; 메모장 존재하면 해당 window activate
-/*
-#IfWinExist ahk_class Notepad
-#n::WinActivate  ; Activates the window found by #IfWin.
-*/
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 개발 완료 - Function
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-F2::
-	Reload
-Return
-
-F4::
-	ExitApp
-Return
-
 ; "x, y" 형태로 현재 마우스 커서 좌표 Clipboard에 저장
 getXY(){
 	MouseGetPos, xpos, ypos 
@@ -585,6 +424,7 @@ getColor(){
 	MsgBox %MouseX%, %MouseY% %color%
 }
 
+; 선택 지점의 ahk_class, title, control, mouse X,Y , color 정보 ToolTip 표출
 getState(){
 	MouseGetPos, MouseX, MouseY, id, control
 	PixelGetColor, color, %MouseX%, %MouseY%, RGB
@@ -713,5 +553,158 @@ callSoundBeep(frequency, duration){
 	SoundBeep, %frequency%, %duration%  ; Play a higher pitch for half a second.
 }
 
+; Program 실행
+execProgram(target, workingDir){
+	Run, %target%, %workingDir%
+	return
+}
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; AutoHotKey 예제
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+^k::
+	; 예제 - 프로그램 실행
+	Run Notepad++ == Run notepad++ == Run notepad++.exe
+
+	; 예제 - MsgBox
+	MsgBox This is ok.
+	MsgBox, This is ok too (it has an explicit comma).
+	
+	; 예제 - 최상위 창에 Key 입력
+	Send Sincerely,{enter}John Smith  ; This line sends keystrokes to the active (foremost) window.
+Return
+
+/*	예제 - Timer #1
+; Example #1: Close unwanted windows whenever they appear:
+#Persistent
+SetTimer, CloseMailWarnings, 250
+return
+
+CloseMailWarnings:
+WinClose, Microsoft Outlook, A timeout occured while communicating
+WinClose, Microsoft Outlook, A connection to the server could not be established
+return
+*/
+
+/*	예제 - Timer #2
+; Example #2: Wait for a certain window to appear and then alert the user:
+#Persistent
+SetTimer, Alert1, 500
+return
+
+Alert1:
+IfWinNotExist, Video Conversion, Process Complete
+    return
+; Otherwise:
+SetTimer, Alert1, Off  ; i.e. the timer turns itself off here.
+SplashTextOn, , , The video conversion is finished.
+Sleep, 3000
+SplashTextOff
+return
+*/
+
+/*	예제 - Timer #3
+; Example #3: Using a method as the timer subroutine.
+
+counter := new SecondCounter
+counter.Start()
+Sleep 5000
+counter.Stop()
+Sleep 2000
+
+; An example class for counting the seconds...
+class SecondCounter {
+    __New() {
+        this.interval := 1000
+        this.count := 0
+        ; Tick() has an implicit parameter "this" which is a reference to
+        ; the object, so we need to create a function which encapsulates
+        ; "this" and the method to call:
+        this.timer := ObjBindMethod(this, "Tick")
+    }
+    Start() {
+        ; Known limitation: SetTimer requires a plain variable reference.
+        timer := this.timer
+        SetTimer % timer, % this.interval
+        ToolTip % "Counter started"
+    }
+    Stop() {
+        ; To turn off the timer, we must pass the same object as before:
+        timer := this.timer
+        SetTimer % timer, Off
+        ToolTip % "Counter stopped at " this.count
+    }
+    ; In this example, the timer calls this method:
+    Tick() {
+        ToolTip % ++this.count
+    }
+}
+*/
+
+/*
+IfWinExist, Untitled - Notepad
+	WinActivate ; use the window found above
+else
+	WinActivate, Calculator	
+*/
+
+; 특정 프로그램에서만 동작
+/*
+; notepad 에서만 동작하는 단축키
+#IfWinActive ahk_class Notepad
+^!a::MsgBox You pressed Ctrl-Alt-A while Notepad is active.  ; This hotkey will have no effect if pressed in other windows (and it will "pass through").
+#c::MsgBox You pressed Win-C while Notepad is active.
+::btw::This replacement text for "btw" will occur only in Notepad.
+
+; notepad를 제외한 나머지에서 동작하는 단축키
+#IfWinActive
+#c::MsgBox You pressed Win-C in a window other than Notepad.
+*/
+
+/*
+; Example 1: Adjust volume by scrolling the mouse wheel over the taskbar.
+#If MouseIsOver("ahk_class Shell_TrayWnd")
+WheelUp::Send {Volume_Up}
+WheelDown::Send {Volume_Down}
+
+MouseIsOver(WinTitle) {
+    MouseGetPos,,, Win
+    return WinExist(WinTitle . " ahk_id " . Win)
+}
+
+; Example 2: Simple word-delete shortcuts for all Edit controls.
+#If ActiveControlIsOfClass("Edit")
+^BS::Send ^+{Left}{Del}
+^Del::Send ^+{Right}{Del}
+
+ActiveControlIsOfClass(Class) {
+    ControlGetFocus, FocusedControl, A
+    ControlGet, FocusedControlHwnd, Hwnd,, %FocusedControl%, A
+    WinGetClass, FocusedControlClass, ahk_id %FocusedControlHwnd%
+    return (FocusedControlClass=Class)
+}
+
+; Example 3: Context-insensitive hotkey.
+#If
+Esc::ExitApp
+
+; Example 4: Dynamic hotkeys. Requires Example 1.
+NumpadAdd::
+Hotkey, If, MouseIsOver("ahk_class Shell_TrayWnd")
+if (doubleup := !doubleup)
+    Hotkey, WheelUp, DoubleUp
+else
+    Hotkey, WheelUp, WheelUp
+return
+
+DoubleUp:
+Send {Volume_Up 2}
+return
+*/
+
+; 메모장 존재하면 해당 window activate
+/*
+#IfWinExist ahk_class Notepad
+#n::WinActivate  ; Activates the window found by #IfWin.
+*/
