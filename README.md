@@ -2,16 +2,18 @@
 
 1. 이론
 	1. 자료구조(Java, Javascript) + 디자인 패턴 + 알고리즘(visualgo.net 으로 정리 및 공부 + 시험)
-	2. 네트워크, 서버
+	2. 네트워크(기본 이론), 서버(tomcat, apache, nginx)
 	3. Database - 설계, 튜닝 (MySql, MongoDB)
-	4. 보안
-	5. Spring
-	6. Web Develop
-	7. HTML5
-	8. Git
-	9. Rest API
-	10. TDD
+	4. 보안(Spring Security, SSL 인증)
+	5. Spring(이론, 실습, Setting, Annotation, AOP, Batch 등등)
+	6. Web Develop(실전기능구현)
+	7. Git(SourceTree 활용법, Github 활용), SVN
+	8. Angular
+	9. Bootstrap
+	10. AWS 제공 Service 훑어보기
 	
+	*. Rest API
+	*. TDD
 	*. 필독 도서 읽기
 
 2. 실습
@@ -22,51 +24,24 @@
 		- Spring, Java, React, AWS, Mybatis, JPA 등등
 	4. Github + SourceTree 활용
 	5. AWS 구성 (설계, 비용)
-	6. AutoHotkey : 매크로 개발
-	7. Spring Rest API
-	8. Node.js 따라하기
+	6. Spring Rest API
+	7. 면접 Coding Test 문제풀기(java)
 
-3. Web Application
-
-4. HTML5 웹 게임
+3. Web Application TO-DO
+	- NoteBook Developer Setting
+	- Project Setting(Spring Boot, Spring 설정)
+	- 기본 웹페이지 띄우기
+	- DB 설정
+	- SVN, Git Setting
+	- 기능 설계
+	- 기능 구현
+	- Test 소스 구현
+	- ......
+	- AWS 배포 및 웹서비스 시작
 	
-5. 영어회화
-	1. 여행관련 단어
-	2. 여행관련 문장
-	3. 유투브, 미드
+4. 영어회화
 	
-6. 탁구 이론
-	1. 기술 정리
-	2. 서브, 서브리시브 정리
-	3. 초반 3구 패턴 총정리
-	4. 경기 스타일
-	5. 유투브
-
-7. 탁구 실습
-	1. 67Kg
-	2. 남 7부
-	3. 남 6부
-	
-8. 경제, 제테크
-	1. 세금
-	2. 건강국민보험
-	3. 국민연금
-	4. 보험
-	5. 주택청약
-	6. 부동산
-	7. 개인사업
-	8. 개인방송 or 유투브
-
-9. 여행
-	1. 국내여행
-	2. 해외 - 패키지여행
-	3. 해외 - 자유여행
-	
-*. 기타
-	1. 요리(한식, 양식, 커피, 제빵)
-	2. 당구, 철권
-	3. 보컬
-	4. 역사
+5. 탁구(67kg)
 	
 --------------------------------------------------------------------------------------------------------------------
 
