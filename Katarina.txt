@@ -1,0 +1,47 @@
+<Katarina>
+
+<상단딜캐>
+10F : lp lp
+12F : rp rp(벽꽝)
+
+<하단딜캐>
+
+<주력기>
+rk rk rk : 가끔 5타까지
+9 ak : 원거리 노딜 -> (2타만 h) 공콤 // 뚱캐 공콤 // 바닥깨기
+7 rk
+3 rp rp : 중중 벽꽝
+3 rp rk : 중상 벽꽝
+2 lp : 원거리 중단
+
+2 lk : 안뜨는 하단
+앉아3 rk : 원거리 하단
+3 ak : 원거리 하단
+
+9 rk rk : 중중 컷킥
+
+3 lk lk : 중하	// 3 lk lk 2 로 캔슬가능
+
+1 rk : 후소퇴
+66 rp rk : 상상
+
+4 rk ap : 1타만 쓰다가 2타까지 써서 낚시
+
+<공콤>
+rp rp (s)
+(s) 2 rp 6 rk
+(s) 4 lp lp (벽으로 멀리 날리기)
+
+<벽콤>
+원잽 -> 왼어퍼 -> 7 rk
+3 lp lp 6 -> ap(레드)
+
+<패턴>
+왼어퍼 -> (h) rk rk rk -> (c) 공콤
+왼어퍼 -> (g) 반시계 -> 9 rk rk
+lp lp rp -> (h) 3 rk
+3 rp rk -> (g) rk rk rk
+2 lp -> (h) rk rk rk
+2 lp -> (c) 7 rk
+짠손 -> 6 -> 3 rk
+짠손 -> 6 -> rk
