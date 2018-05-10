@@ -1,0 +1,69 @@
+<Java>
+1. 기본 용어
+	1. Java SE(Stand Edition) : 기본
+	2. Java ME(Mobile Edition) : SE + Mobile 개발
+	3. Java EE(Enterprise Edition) : SE + 확장
+	4. VM(Virtual Machine) : 모든 OS에서 Java 구동 가능
+	5. GC(Garbage Collection) : 개발자 대신 메모리(Heap 영역)를 관리. 메모리 재사용
+	6. OOP(Object-Oriented Programming) : 객체 지향 프로그래밍(캡슐화, 상속, 다형성, 추상화(=인터페이스)) // 상속을 통한 중복제거, 캡슐화를 통한 정보 은닉화, 오버로딩&오버라이딩, 추상화&인터페이스를 통한 개발 집중 등등
+	7. JRE(Java Runtime Environment) : Java 실행만을 위한 프로그램
+	8. JDK(Java Development Kit) : Java 실행 + 개발을 위한 프로그램
+	9. IDE(Integrated Development Environment) : 통합개발환경 => Eclipse, STS
+
+*. Java 개발을 위한 환경 셋팅
+
+2. Java Programming
+	1. 변수(기본형) : int, char, double ... 소문자로 시작. 값만 저장
+	2. 변수(객체자료형) : Integer, Double, String ... 대문자로 시작. 값 + 메서드
+	3. 연산자 + - * / % && || > < >> << >= <= == ! ++ -- 등등
+	4. 제어문(if, for, for-each, while, switch-case)
+	5. 배열(데이터의 주소값만 가지고 있다. 해당 주소에 데이터 저장)
+	6. 메서드 : 반복작업을 메서드화
+	7. Class : 변수 + 메서드 (판)
+	8. Object : Class 기반으로 객체 생성 (판에서 찍어낸 물건)
+	9. Package : Class를 담는 폴더개념
+	10. 접근제한 : Private(해당 Class 내에서만 사용), Public(모든 Class에서 가져다가 사용), Protected(상복 받은 Class에서만 사용), Default(같은 패키지내에서만 사용)
+	11. static(객체 생성전 Class 자체 변수에 데이터 저장(=데이터 영역에 저장되어 GC 관할에서 벗어남. 과도하게 사용시 메모리 과다. 시스템 뻗을수 있음) : 데이터 공유
+	12. final : 변수 값을 변화할 수 없게 지정
+	13. 팀원간 약속된 값, 모두가 사용하는 공유값, 상수값을 static final로 지정하여 사용
+	14. 상속 : 부모 클래스의 기능을 그대로 사용가능한 자식 클래스 생성 가능 // 다중 상속은 불가능
+		- 이유1 : 검증된 클래스를 상속하여 빠르게 개발 가능
+		- 이유2 : 다양한 객체를 하나로 통일 가능
+	15. Override : 상속받은 메서드를 재정의하여 사용
+	16. Overload : 클래스내에 메서드 이름은 같고 입력 매개변수 정보(개수, 타입)는 다르게 선언 가능
+	17. super : 부모를 찾는 키워드 // 자식 클래스에서 부모 클래스의 메서드를 사용하기 위해 super 사용
+	18. 추상화(abstract) : 껍데기 클래스. 꼭 부모메서드를 재정의(Override)하여 사용해야한다.	// 일반상속과 큰 차이 없다. 정답도 없다. 자식클래스에서 재정의 필요하다면 추상클래스 사용. 그렇지 않으면 일반클래스 상속 사용.
+		public abstract class 추상클래스명 {
+			public 추상클래스명() {
+				// 생성자
+			}
+			
+			public abstract void 메서드명1();
+			public abstract void 메서드명2();
+			public abstract void 메서드명3();
+			public abstract void 메서드명4();
+		}
+		
+		public class 클래스명 extends 추상클래스명{
+			public 클래스명(){
+				// 생성자
+			}
+			
+			@Override
+			public void 매서드명1(){
+				// 기능 구현
+			}
+			@Override
+			public void 매서드명2(){
+				// 기능 구현
+			}
+			@Override
+			public void 매서드명3(){
+				// 기능 구현
+			}
+			@Override
+			public void 매서드명4(){
+				// 기능 구현
+			}
+		}
+	19. 
