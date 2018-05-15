@@ -1,0 +1,13 @@
+<Git>
+
+1. Working Copy(변경 목록) -> add(1차 검토완료) -> index(=staging area)(커밋 대상) -> commit(2차 검토완료) -> Local Repository(로컬 저장소) -> Push(최종 공유) -> Remote Repository(Github, Git Server)
+
+2. 되돌리기
+	- index에서 add 취소 Working Copy로 되돌리기
+	- reset : 되돌리는 시점 선택하여 진행. 되돌리는 시점 이후의 이력은 삭제(Mixed 옵션이용시 되돌리는 시점 이후의 변경내용이 Working Copy에 남는다. // Hard는 삭제)
+	- revert : 이력을 남기면서 버전을 되돌린다. 한단계 전 버전으로 하나씩 revert해야 conflict(충돌)이 발생하지 않는다.
+	
+3. Branch
+	- 생성 : Create Branch
+	
+*. .git 깨졌을때 history잃었을때, .git 폴더 삭제하고 git init으로 초기화후 "git pull origin branchname --allow-unrelated-histories" 명령어로 github 이력이랑 Merge
