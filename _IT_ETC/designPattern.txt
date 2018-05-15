@@ -1,0 +1,4 @@
+<Java Design Pattern>
+1. 전략패턴(Strategy Pattern)
+	- 인터페이스 : 사람과 PC를 연결하는 장치 => 기능에 대한 선언과 구현 분리 // 기능을 사용하는 통로 = 인터페이스
+	
