@@ -9,9 +9,10 @@
 	
 3. Branch
 	- 생성 : Create Branch
+	- Switching : 작업을 진행할 Branch를 더블클릭(CheckOut)하여 진행.
+	- Merge : master 브랜치로 Switching해놓은 상태에서 merge할 branch 우클릭하여 merge...into... 진행
+	- Conflict(충돌) 발생시 해결 필요. (한 파일에 같은 위치에 여러 branch에서 수정 발생시 충돌 발생)
+		- 해결방법 : 문제가 발생한 파일을 확인하여 충돌 발생한 부분을 직접 수정하여준다. -> SourceTree에서 Conflict 파일 선택하여 우클릭 -> resolve conflict -> Mark resolved(내가 직접 충돌을 해결했다)
 	
 *. .git 깨졌을때 history잃었을때, .git 폴더 삭제하고 git init으로 초기화후 "git pull origin branchname --allow-unrelated-histories" 명령어로 github 이력이랑 Merge
 
-master수정
-master수정
-master수정
