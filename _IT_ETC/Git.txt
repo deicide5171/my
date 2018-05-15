@@ -11,3 +11,7 @@
 	- 생성 : Create Branch
 	
 *. .git 깨졌을때 history잃었을때, .git 폴더 삭제하고 git init으로 초기화후 "git pull origin branchname --allow-unrelated-histories" 명령어로 github 이력이랑 Merge
+
+master수정
+master수정
+master수정
