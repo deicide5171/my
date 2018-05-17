@@ -1,3 +1,4 @@
+import os
 import sys
 from PyQt5.QtWebEngineWidgets import QWebEnginePage
 from PyQt5.QtWidgets import QApplication
@@ -28,19 +29,25 @@ class Page(QWebEnginePage):
         self.app.quit()
 
 def download_web_images(url):
-	name = random.randrange(1, 10001)
-	full_name = str(name) + ".jpg"
-	url = unquote(url)
-	
-	try:
-		print("Success == " + url)
-		urllib.request.urlretrieve(url, full_name)
-	except:
-		print("Error Pass == " + url)
-		pass
+        dirname = 'img'
+        if not os.path.isdir('./' + dirname + '/'):
+                os.mkdir('./' + dirname + '/')
+                print('Success == Create ./img Directory')
+        #else:
+                #print('isdir : True')
+        name = random.randrange(1, 10001)
+        full_name = './' + dirname + '/' + str(name) + ".jpg"
+        url = unquote(url)
+        try:
+                print("Success == " + url)
+                urllib.request.urlretrieve(url, full_name)
+        except:
+                print("Error Pass == " + url)
+                pass
 
-def spider():
-      baseUrl = 'https://www.google.co.kr/search?tbm=isch&q=%EA%B9%80%EC%84%B8%EC%A0%95&chips=q:%EA%B9%80%EC%84%B8%EC%A0%95,online_chips:%EA%B5%AC%EA%B5%AC%EB%8B%A8%EA%B9%80%EC%84%B8%EC%A0%95&sa=X&ved=0ahUKEwil2Ou_y4nbAhVF5rwKHT_TA8AQ4lYIJygC&biw=1920&bih=949&dpr=1'
+def spider(baseUrl):
+      #baseUrl = 'https://www.google.co.kr/search?tbm=isch&q=%EA%B9%80%EC%84%B8%EC%A0%95&chips=q:%EA%B9%80%EC%84%B8%EC%A0%95,online_chips:%EA%B5%AC%EA%B5%AC%EB%8B%A8%EA%B9%80%EC%84%B8%EC%A0%95&sa=X&ved=0ahUKEwil2Ou_y4nbAhVF5rwKHT_TA8AQ4lYIJygC&biw=1920&bih=949&dpr=1'
+      
       url = baseUrl
       page = Page(url)
       soup = BeautifulSoup(page.html, 'html.parser')
@@ -63,4 +70,4 @@ def spider():
                         #print(href.encode('utf8'))
                         download_web_images(href)
             
-spider()
+spider('https://www.google.co.kr/search?hl=ko&tbm=isch&source=hp&biw=1920&bih=949&ei=R9f8Wr_gMsG10gSuvLG4Cw&q=%EC%9E%84%EC%9C%A4%EC%95%84&oq=%EC%9E%84%EC%9C%A4%EC%95%84&gs_l=img.3...480.2502.0.2708.0.0.0.0.0.0.0.0..0.0....0...1ac.1j4.64.img..0.0.0....0.o8d37ZuljX0')
