@@ -18,4 +18,129 @@
 	- 주석 #메시지
 	- #escape
 	- #newline
+	- 문자열 자르기
+		user = '1234'
+		user[0] = '1'
+		user[-1] = '4'
+		len(user) = 4
+		len('abc') = 3
+		user[0:2] = '12'
+		user[:] = '1234'
+		user[2:] = '34'
+		user[:2] = '12'
+
+4. List(배열)
+	players = [11, 22, 33, 44, 55]
+	players.pop()
+	players.append(100)
+	
+5. if
+	name = 'lkc'
+	if name is 'lkc':
+		print("he's name is lkc.")
+	elif name is 'asdf':
+		print("no. asdf")
+	else:
+		print("nothing")
+
+6. for
+	foods = ['bacon', 'beef', 'tomato', 'tuna']
+	
+	for f in foods:
+		print(f)
+		
+	for f in foods[:2]:
+		print(f)
+	
+	for number in range(10):
+		print(number) # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+	
+	for number in range(1,10):
+		print(number) # 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+7. while
+	times = 5
+	while times < 10:
+		print(times)
+		times += 1
+
+8. break(루프 멈추고 끝), continue(루프내 실행 중지하고 다음번 루프 실행)
+
+9. function
+	def functionName():
+		print('this is function!!!!')
+		return 'asdf'
+		
+	def get_gender(sex='Unknown'):
+		if sex is ('m' or 'male'):
+			sex = 'Male'
+		elif sex is ('f' or 'female'):
+			sex = 'Female'
+		print(sex)
+	
+	def silly_sentence(name='Lucy', action='ate', item='jelly'):
+		print(name, action, item)
+		
+	silly_sentence()
+	silly_sentence('lkc', 'move', 'ground')
+	silly_sentence(item='bob')
+	silly_sentence(name='lk', action='run', item='room')
+	
+	def add_number(*number): # number 여러개를 파라미터로 받을수 있다
+		total = 0
+		for a in number:
+			total += a
+	
+	def health_calculator(age, apples_ate, cigs_smoked):
+		answer = (100-age) + (apples_ate * 3.5) - (cigs_smoked * 2)
+		print(answer)
+		
+	browns_date = [30, 2, 1]
+	
+	# 아래 2개 같다.
+	health_calculator(browns_date[0], browns_date[1], browns_date[2])
+	health_calculator(*browns_date)
+	
+10. sets : 중복제거
+
+11. dictionary : key, value 타입의 데이터
+	friends = {'Tony':'chubby', 'Lucy':'pretty', 'Eric':'smart'}
+	
+	print(friends)
+	print(friends['Tony'])
+	
+	for k,v in friends.items():
+		print(k + '\'s ' + v)
+		
+12. Modules
+	- computer.py 파일에 f() 함수 생성
+	- mac.py 파일
+		import computer
+		
+		computer.f() # computer.py 파일의 f() 함수 실행
+
+13. import urllib.request # 웹 관련 python 기본 라이브러리
+
+14. 파일 I/O
+	fw = open('test.txt', 'w') #'w'(쓰기), 'r'(읽기), 'a'(이후에추가)
+	fw.write('text write!!!!')
+	fw.close()
+	
+	fr = open('test.txt', 'r')
+	sentences = fr.read()
+	print(sentences)
+	fr.close()
+	
+15. exception 처리
+	while True:
+		try:
+			print('asdfasdf')
+			break
+		except ValueError:
+			print('')
+		except xxxError:
+			print('')
+		finally:
+			print('무조건실행')
+			
 	
