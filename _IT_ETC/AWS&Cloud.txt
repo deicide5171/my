@@ -1,0 +1,13 @@
+<AWS // Cloud Computing>
+1. Cloud Computing : 인터넷에 연결된 거대한 컴퓨터를 활용한다.
+2. Amazon Web Services(AWS)
+3. AWS 이용절차
+	1. AWS 회원가입(VISA, MASTER 카드 필요)
+	2. 보안설정 - 2단계 인증 : [Identity & Access] 메뉴 -> [Security Status] 모두 체크상태로 만들면 안전하다. -> [Activate MFA on your root account] (=2단계 인증) -> [A Virtual MFA device] 체크 -> 스마트폰에 인증 앱 설치(Google OTP 추천 // IOS Android 모두 사용가능) -> QR코드로 인증 앱 처리
+	3. 지역과 가용구역 : AWS의 컴퓨터 위치지역(Region) // 가용구역
+4. Amazon 대표 서비스 EC2(독립된 컴퓨터 1대를 통째로 임대)
+	1. 서비스 지역 선택
+	2. [instances] : 임대한 컴퓨터 현황 확인
+	3. [Launch Instance] : 임대 시작
+	4. Step 진행 : 임대할 컴퓨터의 OS, 사양, 설정, 저장공간, Tag(컴퓨터명), 보안 등등 설정
+	5. 
