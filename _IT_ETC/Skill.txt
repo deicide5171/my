@@ -1,0 +1,115 @@
+<Web Developer>
+	<Skill Level>
+		0 : 사용안함 // 1 : 하 // 2 : 중 // 3 : 상
+	<Common>
+		Git & GitHub(2)
+		SVN(2)
+		SourceTree(1)
+		
+		Maven(2)
+		Gradle(0)
+
+		SSH(1)
+		HTTP/HTTPS(1)
+
+		Terminal(Windows, Linux)(2)
+		vim(1)
+
+		자료구조
+		알고리즘
+		(디자인패턴)
+
+		문자인코딩
+		(정규식)
+
+	<Front-End>
+		HTML(2)
+		CSS(1)
+		Javascript(2)
+		(JQuery)(2)
+		
+		Javascript 오픈소스 활용
+			D3.js(정보시각화)
+			OpenLayers(지도데이터 표시)
+			Google Chart
+			JQuery-UI
+			.....
+		
+		JSP(.jsp)
+		Velocity(.vm)
+		Thymeleaf(.html)
+
+		React(0)
+		Vue(0)
+		Angular(1)
+		Bootstrap(2)
+		
+		JQuery-Ajax
+
+	<Back-End>
+		Java(2)
+		Python(1)
+
+		Spring Framework(2)
+
+		Oracle(2)
+		MySQL(2)
+		PostgreSQL(2)
+		MongoDB(1)
+
+		Apache(2)
+		Tomcat(2)
+		Nginx(2)
+
+		Memcached(1)
+		Redis(1)
+
+		OAuth(1)
+		Basic Authentication(1)
+		Token Authentication(1)
+		JWT(3)
+
+		ElasticSearch(0)
+
+	<Dev-Ops>
+		Linux-CentOS
+		AWS
+
+		Shell
+
+		Jenkins
+
+		Zabbix
+
+		ELK(로그분석)
+
+		Docker
+
+		Apache
+		Tomcat
+		Nginx
+
+		Terminal Command
+		문자다루기 : awk, sed, grep, sort, uniq, cat, cut, echo, fmt, tr, nl, egrep, fgrep, wc .....
+		프로세스모니터링 : ps, top, htop, atop .....
+		시스템성능 : nmon, iostat, sar, vmstat .....
+		네트워크 : nmap, tcpdump, ping, mtr, traceroute, airmon, airodump .....
+		
+
+<검색엔진에서 노출되지 않도록 설정>
+1. 웹 루트 최상위 디렉토리에 robots.txt 파일 설정 
+<robots.txt>
+User-agent: *
+Disallow: /
+
+2. 검색엔진 웹 마스터 도구에 노출되지 않도록 등록
+
+<앱 Push>
+
+<Spring Boot Batch>
+
+<JWT>
+
+<Facebook, Twitter, Naver, Kakao Login API>
+
+<안드로이드 TV>

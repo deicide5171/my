@@ -1,0 +1,33 @@
+<Kotlin>
+- Google Android 공식 언어로 추가(2017년 5월 18일)
+- 안드로이드 스튜디오 3.0부터 코틀린 기본으로 지원됨 // 이전버전은 플러그인만 설치하면 됨
+
+- 장점 : 간결한 문법(자바소스보다 짧다.), 안전한 처리(null값 넣으면 컴파일에러, 따로 null을 허용하는 타입이 존재, null일수도 있는 객체에 바로 접근하면 컴파일에러, auto-casting 지원), 자바-코틀린 100% 호환가능(기존 java프로젝트에서 kotlin 파일 몇개만 추가해서 같이 사용 가능.), 툴이 친숙-강력하다, 멀티플랫폼(JVM, Android, Browser, Netive)
+
+- https://kotlinlang.org/docs/reference/ 참조
+
+- val 변수명 == final 변수명
+- var 변수명 == type 변수명 // 코틀린에서는 타입지정안하면 선언된 값 기준으로 추론하여 사용
+
+- var 변수명: 타입 == type 변수명 // 타입지정
+- var 변수명: 타입? // ?를 붙이면 nullable .. 안붙고 null 이면 컴파일에러
+
+- Any = Object
+
+- Unit = void
+
+- when = switch-case 스러운것
+
+- ranges
+	if(x in 1..10)
+	for(x in 1..5)
+	
+- collections
+	listOf("","","")
+	setOf("","","")
+	
+	for-in, when-in 문으로 컬렉션 탐색가능
+	
+	람다식(JAVA8 이상)을 이용하여 컬렉션에 filter, map등의 연산 가능
+
+- 코틀린에서는 모든게 객체다

@@ -1,0 +1,137 @@
+<코딩 인터뷰 준비>
+1. 객체지향 프로그래밍(Object Oriented Programing : OOP) 개념
+	- Class : Object의 Template. Data + Method
+	- Object : Class의 Instance
+	- Encapsulation : 캡슐화. Class의 보안유지. Class내의 Data + Method를 외부에서의 변화시도로부터 안전하게 지킨다.
+	- Inheritance : 상속. Parent-Child( [부모의 Data + Method] + [본인의 Data + Method] ). 코드의 재사용성을 높여준다.
+	- Abstraction : 추상화. 가상화. 가상클래스에서 함수명만 표시(클래스 설계시 설계자가 가상클래스 생성. 개발자가 자식클래스에 구현.). 가상클래스의 자식클래스(=구현클래스)에서 부모의 함수들에 대한 동작이 구현되어있다.(overriding)
+	- Polymorphism : 다형성. 같은 이름의 Method들이 각각 다른 동작을 한다. Overloading(함수명 같고, 파라미터값에 따라 다른 동작), Overriding(부모 자식간에 다른 행동을 하는 같은 이름의 함수)
+	* 캡상추다
+	
+2. 빅오 표기법(Big O Notation), 시간복잡도(Time Complexity), 공간복잡도(Space Complexity)
+	- O : 오더
+	- O(1) : Push, Pop on Stack // Access hash table
+			nO(1) = O(1)
+			2*O(1) = 10*O(1) = O(1) -- 상수의 곱은 무시
+	- O(log n) : Binary Search Tree Access // Search, Insertion, Deletion
+	- O(n) : Loop // Traverse Tree // Traverse Linked List
+	- O(nlog n) : Quick Sort, Merge Sort, Heap Sort
+	- O(n^2) : 이중 Loop // Insertion Sort // Bubble Sort // Selection Sort
+	
+3. 거품정렬(Bubble Sort) : Performance : O(n^2) // Space Complexity : O(1)
+	- Loop를 돌면서 인접한 인자와 크기를 비교하여 Swap
+	def bubblesort(alist):
+    for i in range(len(alist)-1):
+        for j in range(len(alist)-1):
+            if alist[j] > alist[j+1]:
+                alist[j], alist[j+1] = alist[j+1], alist[j]
+    return alist
+
+4. 선택정렬(Selection Sort) : Worst case Performance : O(n^2) // Best case Performance : O(n^2) // Average case Performance : O(n^2) // Worst case space complexity : O(n) total, O(1) auxiliary
+	- 성능은 좋지 않지만 구현방법이 쉽다.
+	- idx를 순차적으로 선택하여 나머지 값과 비교하여 더 작은 값을 찾으면 Swap
+	def selectionSort(input):
+    for i in range(len(input) - 1):
+        # assume the min is the first element
+        idx_min = i
+        j = i + 1
+
+        # test against elements after i to find the smallest
+        while j < len(input):
+            if(input[j] < input[idx_min]):
+                # found new minimum; remember its index
+                idx_min = j
+            j = j + 1
+
+        if idx_min is not i:
+            # swap
+            input[idx_min], input[i] = input[i], input[idx_min]
+
+    return input
+	
+5. 삽입정렬(Insertion Sort) : Worst case Performance : O(n^2) // Best case Performance : O(n)
+	- 효율성 좋지 않지만 구현방법이 쉽다. // 정렬대상 배열에서 인자를 순차적으로 신규배열에 삽입 + 정렬을 반복한다.
+	def insertion_sort(input):
+
+    for idx, valueToInsert in enumerate(input):
+        # select the hole position where number is to be inserted
+        holePosition = idx
+
+        # check if previous no. is larger than value to be inserted
+        while holePosition > 0 and input[holePosition-1] > valueToInsert:
+            input[holePosition - 1], input[holePosition] = input[holePosition], input[holePosition-1]
+            holePosition = holePosition - 1
+
+    return input
+
+6. 병합정렬(Merge Sort) : Performance : O(nlog n) // space complexity : O(n)
+	- 리스트의 아이템이 1개 남을때까지 반씩 쪼개서 비교하면서 병합
+	def mergeSort(alist):
+    print("Splitting ",alist)
+    if len(alist)>1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+
+        i=0
+        j=0
+        k=0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+
+        while i < len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+
+        while j < len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+	
+7. 빠른정렬(Quick Sort) : Performance : O(nlog n), Worst case(이미 정렬된걸 실행할때 최악.) O(n^2) // space complexity : O(n)
+	- 공간복잡도 효율적임. 본인 데이터만 사용 // Pivot(기준점)을 정한다. 해당 Pivot 보다 작으면 left side, 크면 right side로 swap
+	def quick_sort(list, start, end):
+		# repeat until sublist has one item
+		# because the algorithm is using in-place space, we can not use len(list) instead we use start, end for sublist
+		if start < end:
+			# get pivot using partition method
+			pivot = partition(list, start, end)
+			# recurse quick sort left side from pivot
+			quick_sort(list, start, pivot-1)
+			# recurse quick sort right side from pivot
+			quick_sort(list,pivot+1, end)
+    return list
+
+	def partition(list, start, end):
+		# use end item as initial pivot
+		pivot = end
+		# use start as initial wall index
+		wall = start
+		left = start
+		# repeat until left item hit the end of list
+		while left < pivot:
+			# if left item is smaller than pivot, swap left item with wall and move wall to right
+			# this will ensure items smaller than pivot stay left side from the wall and
+			# the items greater than pivot stay right side from the wall
+			if list[left] < list[pivot]:
+				list[wall], list[left] = list[left], list[wall]
+				wall = wall + 1
+			left = left + 1
+		# when left hit the end of list, swap pivot with wall
+		list[wall], list[pivot] = list[pivot], list[wall]
+		# now left side of wall are the items smaller than wall
+		# now right side of pivot are the items greater than wall
+		# wall is the new pivot
+		pivot = wall
+    return pivot
