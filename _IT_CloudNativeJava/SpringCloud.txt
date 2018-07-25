@@ -6,12 +6,38 @@
 
 
 <Spring Cloud>
-Spring Cloud : 분산 시스템 개발에 필요한 개념들을 사용하기 쉽게 통합해놓은 구현체
+ - Spring Cloud : 분산 시스템 개발에 필요한 개념들을 사용하기 쉽게 통합해놓은 구현체(Spring Boot 기반)
+ - 특징
+	1. 분산된, 버전화된 환경설정(개발, 운영 등 상황별 환경설정값을 Cloud상에 올려 따로 관리 및 사용)
+	2. 서비스 등록 및 검색
+	3. 라우팅
+	4. 서비스 대 서비스 호출
+	5. Load Balancing
+	6. 회로 차단기
+	7. 전역 잠금
+	8. 지도력 선거 및 클러스터 상태
+	9. 분산 메시징
+
+ - Main Projects
+	1. Spring Cloud Config : 프로젝트 환경설정값을 GitHub에 올려놓고 사용 가능. bootstrap.yml 설정파일에 GitHub Uri(spring.cloud.config.uri) 입력. (spring.cloud.bootstrap.enabled=false)
+	
+	2. Spring Cloud Netfilx Eureka : DNS + Loadbalancing
+	
+	3. Circuit Breaker : Hystrix Clients
+	
+	4. Client Side Load Balancer : Ribbon
+	
 	Zuul
 	Eureka
 	Feign
 	Ribbon
 	Hystrix
 	Config-Client
+	
+ - API Gateway
+ - 메시지 큐
+ - 이벤트
 
-Microservice 개발!
+
+
+
