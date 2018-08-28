@@ -89,7 +89,7 @@ HTTP를 통해 컴퓨터나 장치에 애플리케이션을 수행해주는 미�
 - VM(Virtual Machine) : 모든 OS에서 Java 구동 가능
 - GC(Garbage Collection) : 개발자 대신 메모리(Heap 영역)를 관리. 메모리 재사용
 메모리
-- 메서드영역 : static 변수, 전역변수, 코드에 사용되는 Class 정보
+- 클래스(Class) : static 변수, 전역변수, 코드에 사용되는 Class 정보
 - 스택(Stack) : 지역변수, 함수(매서드) LIFO 먼저들어온게 젤 마지막에 사용됨.
 - 힙(Heap) : new 연산자로 동적할당된 객체들을 저장 // 가비지 컬렉션에 의해 메모리 관리됨.
 
