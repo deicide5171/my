@@ -1,0 +1,6 @@
+- LDAP(Light Directory Access Protocol)
+	- X.500
+	- DAP 너무 방대하고 복잡하고 구현이 어렵다.
+	- LDAP 경량화된 DAP
+	- 네트워크 단에서 데이터에 접근하는 방식중 하나?
+	- 자세한건 블로그 참조

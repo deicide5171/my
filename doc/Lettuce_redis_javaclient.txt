@@ -1,0 +1,6 @@
+- Lettuce(Redis Java Client) 5.2.1.RELEASE
+	- Netty(비동기 이벤트 기반 고성능 네트워크 프레임워크) 기반의 Redis Client
+	- Jedis 지원 안함. 
+	- Lettuce가 TPS 2배 높음. CPU 부하 더 낮음.
+	- Spring Boot 2부터 사용 가능. 기본 라이브러리로 선정. Jedis 빠짐.
+	
