@@ -31,4 +31,4 @@
 
 - Mini Project
 
-[zzaa](https://bitbucket.hyundai-mnsoft.com/projects/DATA/repos/routo-developers-web/commits/1c646f9ac18b6f9459cb30b0db33c6cd28e0071d)
+https://bitbucket.hyundai-mnsoft.com/projects/DATA/repos/routo-developers-web/commits/b559de58e0590cb40d37b6e04c9a41fd9fb924a6
