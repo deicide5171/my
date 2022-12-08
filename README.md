@@ -31,6 +31,4 @@
 
 - Mini Project
 
-https://bitbucket.hyundai-mnsoft.com/projects/DATA/repos/routo-developers-web/commits/b559de58e0590cb40d37b6e04c9a41fd9fb924a6
-
-https://teams.microsoft.com/l/meetup-join/19:meeting_ZDA4ZWMwZWUtM2E3Yi00NjE1LWFjOWUtNTIwOTQxNGNhMWYx@thread.v2/0?context=%7B%22Tid%22:%22c3009ee9-85dd-4ecf-a86f-79941767d706%22,%22Oid%22:%22534827b7-aa42-47df-8825-371453840ae6%22%7D 
+https://teams.microsoft.com/l/meetup-join/19:meeting_NmExNDAzM2ItOWQ0Ny00Yzg0LWE4ZGItZTI4NmJlOTA0NjEz@thread.v2/0?context=%7B%22Tid%22:%22c3009ee9-85dd-4ecf-a86f-79941767d706%22,%22Oid%22:%22534827b7-aa42-47df-8825-371453840ae6%22%7D 
