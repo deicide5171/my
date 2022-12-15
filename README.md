@@ -31,4 +31,4 @@
 
 - Mini Project
 
-https://teams.microsoft.com/l/meetup-join/19:meeting_NmExNDAzM2ItOWQ0Ny00Yzg0LWE4ZGItZTI4NmJlOTA0NjEz@thread.v2/0?context=%7B%22Tid%22:%22c3009ee9-85dd-4ecf-a86f-79941767d706%22,%22Oid%22:%22534827b7-aa42-47df-8825-371453840ae6%22%7D 
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_NTdhOWQwMzktODdjMi00OTUyLTk5NjctMTZkNmQxNTQ5YjYy%40thread.v2/0?context=%7b%22Tid%22%3a%22c3009ee9-85dd-4ecf-a86f-79941767d706%22%2c%22Oid%22%3a%22785c58de-018f-4a9f-8f41-d5ee0dd88b54%22%7d
