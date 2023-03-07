@@ -30,3 +30,5 @@
   7. GeoServer
 
 - Mini Project
+
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZmE5YjNhZjEtOGFjZi00YmY0LWJmNmUtNzQyODY2MjZkMTlh%40thread.v2/0?context=%7b%22Tid%22%3a%22c3009ee9-85dd-4ecf-a86f-79941767d706%22%2c%22Oid%22%3a%2294e397ab-38d3-448c-a407-a5651fd0bba9%22%7d
